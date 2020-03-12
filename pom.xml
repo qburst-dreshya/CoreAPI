@@ -14,13 +14,11 @@
                 <configuration>
                     <testResultsTimestamp>false</testResultsTimestamp>
 	                <propertiesUser>
-                   		<threadcount>${thread}</threadcount>
-                        <rampup>${rampup}</rampup>
-                        <epic>${epic}</epic>
-                        <jmeter.save.saveservice.output_format>csv</jmeter.save.saveservice.output_format>
+			<region>${region}</region>
+			<jmeter.save.saveservice.output_format>csv</jmeter.save.saveservice.output_format>
                         <jmeter.save.saveservice.bytes>true</jmeter.save.saveservice.bytes>
                         <jmeter.save.saveservice.label>true</jmeter.save.saveservice.label>
-						<jmeter.save.saveservice.assertion_results>true</jmeter.save.saveservice.assertion_results>
+			<jmeter.save.saveservice.assertion_results>true</jmeter.save.saveservice.assertion_results>
                         <jmeter.save.saveservice.latency>true</jmeter.save.saveservice.latency>
                         <jmeter.save.saveservice.response_code>true</jmeter.save.saveservice.response_code>
                         <jmeter.save.saveservice.response_message>true</jmeter.save.saveservice.response_message>
@@ -28,11 +26,11 @@
                         <jmeter.save.saveservice.thread_counts>true</jmeter.save.saveservice.thread_counts>
                         <jmeter.save.saveservice.thread_name>true</jmeter.save.saveservice.thread_name>
                         <jmeter.save.saveservice.time>true</jmeter.save.saveservice.time>
-						<includecontroller.prefix>${basedir}/src/test/jmeter/</includecontroller.prefix>
+			<includecontroller.prefix>${basedir}/src/test/jmeter/</includecontroller.prefix>
 						
                     </propertiesUser>
                     <testFilesDirectory>${basedir}/src/test/jmeter/JMX/${suite}/</testFilesDirectory>
-                </configuration>
+                   </configuration>
                 <executions>
                     <execution>
                         <id>jmeter-tests</id>
@@ -58,7 +56,7 @@
                                     <fileset dir="${basedir}/src/test/resources/report-template" />
                                 </copy>
                                 
-                                <java jar="${basedir}/target/jmeter/bin/ApacheJMeter-3.3.jar" fork="true">
+                                <java jar="${basedir}/target/jmeter/bin/ApacheJMeter-5.1.jar" fork="true">
                                     <arg value="-g" />
                                     <arg value="${basedir}/target/jmeter/results/*.jtl" />
                                     <arg value="-o" />
